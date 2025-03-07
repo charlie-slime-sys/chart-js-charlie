@@ -2,43 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chart.js example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js example</title>
+  <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
-    <p>h</p>
-    
+  <p>some thing yada yada info...............</p>
 
-    <div>
-        <canvas id="myChart"></canvas>
-      </div>
+
+  <div class="over-chart">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Needs', 'Wants', 'Savings'],
+        datasets: [{
+          label: 'Total Amount of Money',
+          backgroundColor: [
+            '#d65555',
+            '#4c80da',
+            '#6ce394'
+          ],
+          data: [1500, 1500, 1500],
+          borderWidth: 1
+        }]
+      },
+
       
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      
-      <script>
-        const ctx = document.getElementById('myChart');
-      
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      </script>
+      //beneath has a thing where it manages the height like a bar chart....
+      //this is a doughnut chart so we don't need what is below
+      // options: {
+      //   scales: {
+      //     y: {
+      //       beginAtZero: true
+      //     }
+      //   }
+      // }
+    });
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+.over-chart {
+    width: 500px;
+    height: 400px;
+}
